@@ -395,7 +395,7 @@ for i in 0 1 2; do
     --tags "Key=Name,Value=${NAME}-master-${i}"
 done
 ```
-![](./Images/master%20nodes.PNG)
+![](./images/Instances%20created.png)
 ## EC2 Instances for Worker Nodes
 
 Create 3 worker nodes:
@@ -420,7 +420,7 @@ for i in 0 1 2; do
     --tags "Key=Name,Value=${NAME}-worker-${i}"
 done
 ```
-![](./Images/worker%20nodes.PNG)
+![](./images/all%20instances.png)
 ## Step 3 Prepare The Self-Signed Certificate Authority And Generate TLS Certificates
 
 The PKI Infrastructure is provisioned using cfssl which will have a Certificate Authority which will then generate certificates for all the individual components:
@@ -470,7 +470,7 @@ cfssl gencert -initca ca-csr.json | cfssljson -bare ca
 
 }
 ```
-![](./Images/certificates%20and%20keys.PNG)
+![](./images/all%20certificates.png)
 ### Generating TLS Certificates For Client and Server
 
 The certificate for the Api-server must have IP addresses, DNS names, and a Load Balancer address included. Otherwise, you will have a lot of difficulties connecting to the api-server.
@@ -770,8 +770,15 @@ instance="${NAME}-master-${i}" \
     master-kubernetes.pem master-kubernetes-key.pem ubuntu@${external_ip}:~/;
 done
 ```
-![](./Images/client%20certificate.PNG)
+![](./images/move%20respective%20keys.png)
 
+![](./images/move%20respective%20files%2002.png)
+
+![](./images/kubectl%2001.png)
+
+![](./images/kubeconfig%20ls.png)
+
+![](./images/kube-proxy%20created.png)
 ## STEP 5 USE `KUBECTL` TO GENERATE KUBERNETES CONFIGURATION FILES FOR AUTHENTICATION
 
 First, let us create a few environment variables for reuse by multiple commands.
