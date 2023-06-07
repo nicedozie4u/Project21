@@ -68,7 +68,14 @@ Test your AWS CLI by running:
 
 `aws ec2 describe-vpcs`
 
-![](./Images/Test%20AWS%20cli.PNG)
+![](./images/configure%20cli.png)
+
+![](./images/vpc%20describe.png)
+
+
+![](./images/verify%20cli.png)
+
+
 
 ## Installing kubectl
 
@@ -93,7 +100,7 @@ Verify that kubectl version 1.21.0 or higher is installed:
 kubectl version --client
 ```
 
-![](./Images/Kubectl%20version.PNG)
+![](./images/verify%20kubectl%20install.png)
 
 ## Install CFSSL and CFSSLJSON
 
@@ -109,6 +116,9 @@ chmod +x cfssl cfssljson
 
 sudo mv cfssl cfssljson /usr/local/bin/
 ```
+![](./images/install%20cfssl.png)
+
+![](./images/verify%20kubectl%20install.png)
 
 # AWS CLOUD RESOURCES FOR KUBERNETES CLUSTER
 
@@ -149,13 +159,13 @@ aws ec2 modify-vpc-attribute \
 --enable-dns-hostnames '{"Value": true}'
 ```
 
-![](./Images/k8-vpcs.PNG)
+![](./images/create%20VPC.png)
 
 AWS Region
 
 6. Set the required region
    
-`AWS_REGION=eu-central-1`
+`AWS_REGION=us-east-1`
 
 Dynamic Host Configuration Protocol – DHCP
 
@@ -182,8 +192,7 @@ aws ec2 associate-dhcp-options \
   --dhcp-options-id ${DHCP_OPTION_SET_ID} \
   --vpc-id ${VPC_ID}
 ```
-![](./Images/DHCP%20tag.PNG)
-![](./Images/dhcp-vpc.PNG)
+![](./images/DHCP%20option%20set.png)
 10. Create the Subnet:
 ```
 SUBNET_ID=$(aws ec2 create-subnet \
