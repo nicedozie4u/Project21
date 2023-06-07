@@ -919,10 +919,21 @@ done
 ![](./images/kubeconfig%20ls.png)
 
 ![](./images/kube-proxy%20created.png)
+
+![](./images/kube-controller-manager%20created.png)
+
+![](./images/kube-scheduler%20created%20.png)
+
+![](./images/admin%20created.png)
+
 ### ***Note: Distribute the files to their respective servers, using `scp` and a for loop like we have done previously. This is a test to validate that you understand which component must go to which node.***
 
-![](./Images/sending%20kubeconfig%20to%20master.PNG)
-![](./Images/sending%20kubeconfig%20to%20worker.PNG)
+
+![](./images/task01.png)
+
+![](./images/task02.png)
+
+![](./images/task%20check.png)
 
 
 ## Step 6 Prepare the etcd database for encryption at rest.
