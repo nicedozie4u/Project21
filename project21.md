@@ -118,7 +118,7 @@ sudo mv cfssl cfssljson /usr/local/bin/
 ```
 ![](./images/install%20cfssl.png)
 
-![](./images/verify%20kubectl%20install.png)
+
 
 # AWS CLOUD RESOURCES FOR KUBERNETES CLUSTER
 
@@ -193,6 +193,8 @@ aws ec2 associate-dhcp-options \
   --vpc-id ${VPC_ID}
 ```
 ![](./images/DHCP%20option%20set.png)
+
+![](./images/vpc%20association.png)
 10. Create the Subnet:
 ```
 SUBNET_ID=$(aws ec2 create-subnet \
@@ -205,7 +207,7 @@ aws ec2 create-tags \
   --resources ${SUBNET_ID} \
   --tags Key=Name,Value=${NAME}
 ```
-![](./Images/create%20subnet.PNG)
+![](./images/subnet.png)
 
 Internet Gateway – IGW
 
@@ -222,7 +224,7 @@ aws ec2 attach-internet-gateway \
   --internet-gateway-id ${INTERNET_GATEWAY_ID} \
   --vpc-id ${VPC_ID}
 ```
-
+![](./images/IGW.png)
 Route tables
 
 12. Create route tables, associate the route table to subnet, and create a route to allow external traffic to the Internet through the Internet Gateway:
