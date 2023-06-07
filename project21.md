@@ -992,11 +992,6 @@ master_3_ip=$(aws ec2 describe-instances \
 --output text --query 'Reservations[].Instances[].PublicIpAddress')
 ssh -i k8s-cluster-from-ground-up.id_rsa ubuntu@${master_3_ip}
 ```
-You should have a a similar pane like below. You should be able to see all the files that have been sent to the nodes.
-
-![](./Images/master-0%20ls.PNG)
-![](./Images/master-1%20ls.PNG)
-![](./Images/master-2%20ls.PNG)
 
 
 2. Download and install etcd
@@ -1083,7 +1078,9 @@ sudo ETCDCTL_API=3 etcdctl member list \
   --key=/etc/etcd/master-kubernetes-key.pem
 ```
 
-![](./Images/etcd%20running.PNG)
+![](./images/etcd%20running.png)
+
+![](./images/etcd%20running%2002.png)
 
 
 
