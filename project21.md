@@ -774,11 +774,7 @@ done
 
 ![](./images/move%20respective%20files%2002.png)
 
-![](./images/kubectl%2001.png)
 
-![](./images/kubeconfig%20ls.png)
-
-![](./images/kube-proxy%20created.png)
 ## STEP 5 USE `KUBECTL` TO GENERATE KUBERNETES CONFIGURATION FILES FOR AUTHENTICATION
 
 First, let us create a few environment variables for reuse by multiple commands.
@@ -918,7 +914,11 @@ done
   kubectl config use-context default --kubeconfig=admin.kubeconfig
 }
 ```
+![](./images/kubectl%2001.png)
 
+![](./images/kubeconfig%20ls.png)
+
+![](./images/kube-proxy%20created.png)
 ### ***Note: Distribute the files to their respective servers, using `scp` and a for loop like we have done previously. This is a test to validate that you understand which component must go to which node.***
 
 ![](./Images/sending%20kubeconfig%20to%20master.PNG)
