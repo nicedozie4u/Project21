@@ -960,6 +960,10 @@ resources:
       - identity: {}
 EOF
 ```
+![](./images/etcd%20running.png)
+
+![](./images/etcd%20running%2002.png)
+
 
 **Send the encryption file to the Controller nodes using scp and a for loop.**
 
