@@ -244,7 +244,7 @@ aws ec2 create-route \
   --destination-cidr-block 0.0.0.0/0 \
   --gateway-id ${INTERNET_GATEWAY_ID}
 ```
-![](./Images/route%20tables.PNG)
+![](./images/Route%20tables.png)
 
 
 
@@ -296,6 +296,8 @@ aws ec2 authorize-security-group-ingress \
   --port -1 \
   --cidr 0.0.0.0/0
 ```
+
+![](./images/security%20group.png)
 ## Network Load Balancer
 
 14. Create a network Load balancer,
@@ -308,7 +310,7 @@ LOAD_BALANCER_ARN=$(aws elbv2 create-load-balancer \
 --output text --query 'LoadBalancers[].LoadBalancerArn')
 ```
 
-![](./Images/route%20tables.PNG)
+![](./images/loadbalancer.png)
 
 ## Tagret Group
 
@@ -322,7 +324,7 @@ TARGET_GROUP_ARN=$(aws elbv2 create-target-group \
   --target-type ip \
   --output text --query 'TargetGroups[].TargetGroupArn')
 ```
-![](./Images/target%20group.PNG)
+![](./images/target%20groups.png)
 
 16. Register targets: (Just like above, no real targets. You will just put the IP addresses so that, when the nodes become available, they will be used as targets.)
 ```
@@ -330,7 +332,7 @@ aws elbv2 register-targets \
   --target-group-arn ${TARGET_GROUP_ARN} \
   --targets Id=172.31.0.1{0,1,2}
 ```
-![](./Images/register%20targets.PNG)
+![](./images/target%20groups.png)
 
 
 17. Create a listener to listen for requests and forward to the target nodes on TCP port 6443
@@ -342,7 +344,9 @@ aws elbv2 create-listener \
 --default-actions Type=forward,TargetGroupArn=${TARGET_GROUP_ARN} \
 --output text --query 'Listeners[].ListenerArn'
 ```
-![](./Images/listeners.PNG)
+![](./images/Listener.png)
+
+![](./images/targets.png)
 ## Step 2 – Create Compute Resources
 AMI
 
