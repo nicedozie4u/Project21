@@ -1267,9 +1267,11 @@ sudo systemctl status kube-controller-manager
 sudo systemctl status kube-scheduler
 }
 ```
-![](./Images/kube-apiserver%20status.PNG)
+![](./images/kube-scheduler%20running.png)
 
-![](./Images/kube-controller-manager%20status.PNG)
+![](./images/kube-controller-manager%20running.png)
+
+![](./images/kube-apiserver%20running.png)
 
 Test that Everything is working fine
 
@@ -1281,15 +1283,14 @@ To get the cluster details run:
 To get the current namespaces:
 
 `kubectl get namespaces --kubeconfig admin.kubeconfig`
-![](./Images/cluster%20info%20and%20namespace.PNG)
+![](./images/cluster%20info.png)
 
 
 To get the status of each component:
 
 `kubectl get componentstatuses --kubeconfig admin.kubeconfig`
 
-![](./Images/health%20status.PNG)
-![](./Images/target%20status.PNG)
+![](./images/kube-config%20component%20status.png)
 
 On one of the controller nodes, configure Role Based Access Control (RBAC) so that the api-server has necessary authorization for for the kubelet.
 
@@ -1339,6 +1340,6 @@ subjects:
 EOF
 ```
 
-![](./Images/containerd%20status.PNG)
+![](./images/containerd%20running.png)
 
 ![](./Images/get%20nodes.PNG)
